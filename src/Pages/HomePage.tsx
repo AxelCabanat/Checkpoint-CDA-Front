@@ -10,13 +10,13 @@ const HomePage = () => {
   } = useQuery(GET_CONTINENTS);
 
   return (
-  <div>
-    <h1>Choose your country</h1>
-    <div className='flex flex-row'>
+  <div className='flex flex-col justify-center'>
+    <h1 className='m-auto text-xl'>Choose your country</h1>
+    <div className="grid grid-cols-4">
       {!continentsLoading && 
       data.continents.map((continent: Continent) => 
       <Link to={`/continent/${continent.code}`}>
-      <div className='border-2 border-black-300 w-20 h-20 text-center'> {continent.name} </div>
+      <div className='border-2 border-black-300 text-center h-48 flex flex-col justify-center'> {continent.name} </div>
       </Link>)}
     </div>
   </div>

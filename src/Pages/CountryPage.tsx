@@ -12,10 +12,13 @@ const CountryPage = () => {
       );
 
 return (
-    <div>
+    <div className='flex flex-col justify-center'>
         {data! && 
-        <div>
-            <p>{data.country.name}</p>
+        <div className="m-auto flex flex-col justify-center">
+            <h1 className='m-auto text-xl'>{data.country.name}</h1>
+            <p className='m-auto text-xl'>{data.country.emoji}</p>
+            <p className='m-auto'>{`Currency: ${data.country.currency}`}</p>
+            <p className='m-auto'>{`Capital: ${data.country.capital}`}</p>
         </div>
 }
     </div>

@@ -16,14 +16,15 @@ const ContinentPage = () => {
 return (
     <div>
         {data! && 
-        <div>
-        <p>{data.continent.name}</p>
-        <div>
+        <div className="flex flex-col justify-center">
+        <h1 className='m-auto text-xl'>{data.continent.name}</h1>
+        <h2 className='m-auto text-m'>Countries</h2>
+        <div className="grid grid-cols-4">
             {
                 data.continent.countries.map(
                     (country: Country, index:number) =>  
                     <Link to={`/country/${country.code}`}> 
-                    <div key={index} className="flex flex-row">         
+                    <div key={index} className='border-2 border-black-300 text-center h-48 flex flex-col justify-center'>         
                         <p >{country.emoji}</p>
                         <p >{country.name}</p>
                     </div>
