@@ -11,7 +11,7 @@ const ContinentPage = () => {
         GET_ONE_CONTINENT,
         { variables: { code: code! } },
       );
-if (data!) console.log(data.continent.countries)
+
 return (
     <div>
         {data! && 

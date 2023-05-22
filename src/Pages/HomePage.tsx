@@ -8,7 +8,7 @@ const HomePage = () => {
     loading: continentsLoading,
     data,
   } = useQuery(GET_CONTINENTS);
-console.log(data.continents)
+
   return (
   <div>
     <h1>Choose your country</h1>
