@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { GET_CONTINENTS } from '../GraphQL/queries';
 import {Continent} from '../Utils/Types'
+import { Link } from 'react-router-dom';
 const HomePage = () => {
 
   const {
@@ -14,7 +15,9 @@ console.log(data.continents)
     <div className='flex flex-row'>
       {!continentsLoading && 
       data.continents.map((continent: Continent) => 
-      <div className='border-2 border-black-300 w-20 h-20 text-center'> {continent.name} </div>)}
+      <Link to={`/continent/${continent.code}`}>
+      <div className='border-2 border-black-300 w-20 h-20 text-center'> {continent.name} </div>
+      </Link>)}
     </div>
   </div>
   );
