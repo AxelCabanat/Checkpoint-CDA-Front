@@ -1,11 +1,15 @@
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import HomePage from './Pages/HomePage';
 
 function App() {
   return (
-    <div className="bg-sky-700">
-      init checkpoint
-    </div>
+<BrowserRouter>
+    <Routes>
+      <Route  path="/" element={<HomePage/>}/>
+    </Routes>
+</BrowserRouter>
   );
 }
 
